@@ -2,12 +2,36 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Slow Demo App{% endblock %}</title>
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        <link type="text/css" href="{{ asset('bundles/nelmioslow/css/reset.css') }}" rel="stylesheet" />
+        <link type="text/css" href="{{ asset('bundles/nelmioslow/css/main.css') }}" rel="stylesheet" />
+        <link type="text/css" href="{{ asset('bundles/nelmioslow/css/print.css') }}" rel="stylesheet" media="print" />
+        {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div id="container">
+            <header>
+                <a href="{{ path('home') }}">Home</a>
+                <a href="{{ path('noop') }}">Noop</a>
+                <a href="{{ path('all') }}">Run All</a>
+                <a href="{{ path('composed') }}">Run All Composed</a>
+                |
+                <a href="{{ path('bob') }}">Run Bob</a>
+                <a href="{{ path('cracker') }}">Run Cracker</a>
+                <a href="{{ path('sleepyhead') }}">Run Sleepyhead</a>
+                <a href="{{ path('tree_builder') }}">Run Tree Builder</a>
+                <a href="{{ path('resizer') }}">Run Resizer</a>
+            </header>
+            <div id="main" role="main">
+                {% block body %}{% endblock %}
+            </div>
+            <noscript>Javascript must be enabled</noscript>
+            <footer>
+            </footer>
+        </div>
+        <script src="{{ asset('bundles/nelmioslow/js/jquery.js') }}"></script>
+        <script src="{{ asset('bundles/nelmioslow/js/main.js') }}"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

@@ -4,17 +4,36 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
-    <parameters>
-        <parameter key="nelmio_slow.example.class">Nelmio\SlowBundle\Example</parameter>
-    </parameters>
-
     <services>
-        <service id="nelmio_slow.example" class="%nelmio_slow.example.class%">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        <service id="nelmio_slow.slow_manager" class="Nelmio\SlowBundle\Model\SlowManager">
+            <argument type="service" id="nelmio_slow.cracker_model" />
+            <argument type="service" id="nelmio_slow.bob_model" />
+            <argument type="service" id="nelmio_slow.sleepyhead_model" />
+            <argument type="service" id="nelmio_slow.tree_builder_model" />
+<!--            <argument type="service" id="nelmio_slow.resizer_model" />-->
+        </service>
+
+        <service id="nelmio_slow.cracker_model" class="Nelmio\SlowBundle\Model\Cracker">
+            <argument>%kernel.cache_dir%/cracker.data</argument>
+        </service>
+
+        <service id="nelmio_slow.tree_builder_model" class="Nelmio\SlowBundle\Model\TreeBuilder">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
+
+        <service id="nelmio_slow.sleepyhead_model" class="Nelmio\SlowBundle\Model\Sleepyhead">
+        </service>
+
+        <service id="nelmio_slow.bob_model" class="Nelmio\SlowBundle\Model\Bob">
+            <argument>100000</argument>
+        </service>
+
+        <service id="nelmio_slow.resizer_model" class="Nelmio\SlowBundle\Model\Resizer">
+            <argument>%kernel.root_dir%/../src/Nelmio/SlowBundle/Resources/public/images/slow-burn.jpg</argument>
+            <argument type="service" id="nelmio_slow.imagine" />
+        </service>
+
+        <service id="nelmio_slow.imagine" class="Imagine\Gd\Imagine">
         </service>
     </services>
-    -->
 </container>

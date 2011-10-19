@@ -59,9 +59,9 @@ jms_security_extra:
     secure_all_services: false
 
 jns_xhprof:
-    location_lib: /home/php/www/xhprof/xhprof_lib/config.php
-    location_config: /home/php/www/xhprof/xhprof_lib/utils/xhprof_lib.php
-    location_runs: /home/php/www/xhprof/xhprof_lib/utils/xhprof_runs.php
+    location_lib: %kernel.root_dir%/../../xhprof/xhprof_lib/config.php
+    location_config: %kernel.root_dir%/../../xhprof/xhprof_lib/utils/xhprof_lib.php
+    location_runs: %kernel.root_dir%/../../xhprof/xhprof_lib/utils/xhprof_runs.php
     location_web: http://localhost/xhprof/xhprof_html/
     enabled: true
 

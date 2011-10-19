@@ -1,0 +1,23 @@
+{% extends layout ? '::base.html.twig' : '::empty.html.twig' %}
+
+{% block body %}
+    <div>{{ name }} -> {{ _self.renderResult(result) }}</div>
+{% endblock %}
+
+{% macro renderResult(result) %}
+    {% for node in result %}
+        <ul class="menu">{{ _self.renderNode(node) }}</ul>
+    {% endfor %}
+{% endmacro %}
+
+{% macro renderNode(node) %}
+    <li>{{ node.name }}
+    {% if node.children|length %}
+        <ul class="menu">
+        {% for sub in node.children %}
+            {{ _self.renderNode(sub) }}
+        {% endfor %}
+        </ul>
+    {% endif %}
+    </li>
+{% endmacro %}

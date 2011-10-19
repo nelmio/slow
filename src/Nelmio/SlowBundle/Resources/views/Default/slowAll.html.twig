@@ -1,0 +1,13 @@
+{% extends '::base.html.twig' %}
+
+{% import 'NelmioSlowBundle:Run:treeBuilder.html.twig' as tree %}
+
+{% block body %}
+    {% for batch, result in results %}
+        {% if batch == 'tree builder' %}
+            <div>{{ batch }} -&gt; {{ tree.renderResult(result) }}</div>
+        {% else %}
+            <div>{{ batch }} -&gt; {{ result }}</div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

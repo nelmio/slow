@@ -1,0 +1,84 @@
+body, html {
+    min-height: 100%;
+}
+
+body {
+    background: #fff;
+    background-color:#ffffff;
+    background-image: -moz-radial-gradient(50% 50%, ellipse closest-side, #ffffff, #ccc 100%);
+    background-image: -webkit-radial-gradient(50% 50%, ellipse closest-side, #ffffff, #ccc 100%);
+    background-image: -o-radial-gradient(50% 50%, ellipse closest-side, #ffffff, #ccc 100%);
+    background-image: -ms-radial-gradient(50% 50%, ellipse closest-side, #ffffff, #ccc 100%);
+    background-image: radial-gradient(50% 50%, ellipse closest-side, #ffffff, #ccc 100%);
+    font: 20px Arial;
+}
+
+header {
+    margin: 10px;
+}
+
+header a {
+    font-size: 26px;
+    padding: 5px;
+}
+
+#main div {
+    background: #339;
+    min-width: 400px;
+    padding: 5px;
+    border-radius: 5px;
+    color: #eee;
+    margin-bottom: 5px;
+}
+
+#main {
+    margin: 10px;
+    opacity: 0;
+    left: -400px;
+    position: relative;
+}
+
+#main div > ul.menu {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 10px;
+}
+ul.menu {
+    list-style: none;
+}
+ul.menu > li > * {
+    display: none;
+}
+ul.menu > li:hover > * {
+    display: block;
+    border: 2px solid #ccc;
+    background: #ddd;
+}
+ul.menu ul.menu > li:hover {
+    background: #fdf;
+}
+
+.menu .menu {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    color: #333;
+    width: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+
+.menu li {
+    position: relative;
+}
+.menu .menu li {
+    border-bottom: 1px solid #ccc;
+    padding: 4px 5px;
+}
+
+.menu .menu .menu {
+    left: 100px;
+    top: -2px;
+}

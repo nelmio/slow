@@ -33,6 +33,10 @@
 [twig-extensions]
     git=http://github.com/fabpot/Twig-extensions.git
 
+[imagine]
+    git=http://github.com/avalanche123/Imagine.git
+    version=v0.2.3
+
 [metadata]
     git=http://github.com/schmittjoh/metadata.git
     version=1.0.0
@@ -61,7 +65,7 @@
     version=v1.0.1
 
 [JnsXhprofBundle]
-    git=http://github.com/jonaswouters/XhprofBundle.git
+    git=http://github.com/Seldaek/XhprofBundle.git
     target=/bundles/Jns/Bundle/XhprofBundle
 
 [JMSDebuggingBundle]
