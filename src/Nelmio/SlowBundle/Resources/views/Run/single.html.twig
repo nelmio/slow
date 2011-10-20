@@ -1,5 +1,5 @@
 {% extends layout ? '::base.html.twig' : '::empty.html.twig' %}
 
 {% block body %}
-    <div>{{ name }} -> {{ result }}</div>
+    <div>{{ name }} -> {{ result|raw }}</div>
 {% endblock %}

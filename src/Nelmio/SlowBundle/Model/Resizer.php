@@ -3,6 +3,7 @@
 namespace Nelmio\SlowBundle\Model;
 
 use Imagine\Image\ImagineInterface;
+use Imagine\Image\ImageInterface;
 use Imagine\Image\Box;
 
 class Resizer
@@ -19,9 +20,9 @@ class Resizer
     public function getData()
     {
         $size = new Box(40, 40);
-        $image = $imagine->open($this->file)->thumbnail($size, ImageInterface::THUMBNAIL_INSET);
+        $image = $this->imagine->open($this->file)->thumbnail($size, ImageInterface::THUMBNAIL_INSET);
 
-        return '<img src="data:image/png;base64,'.base64_encode($image->get('png'));
+        return '<img src="data:image/png;base64,'.base64_encode($image->get('png')).'" />';
     }
 
     private function multiply($result, $n)

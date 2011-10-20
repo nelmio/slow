@@ -10,7 +10,7 @@
             <argument type="service" id="nelmio_slow.bob_model" />
             <argument type="service" id="nelmio_slow.sleepyhead_model" />
             <argument type="service" id="nelmio_slow.tree_builder_model" />
-<!--            <argument type="service" id="nelmio_slow.resizer_model" />-->
+            <argument type="service" id="nelmio_slow.resizer_model" />
         </service>
 
         <service id="nelmio_slow.cracker_model" class="Nelmio\SlowBundle\Model\Cracker">

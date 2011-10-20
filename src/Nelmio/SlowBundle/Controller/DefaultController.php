@@ -40,7 +40,7 @@ class DefaultController extends Controller
                 'cracker' => $manager->runCracker(),
                 'sleepyhead' => $manager->runBob(),
                 'tree builder' => $manager->runTreeBuilder(),
-//                'resizer' => $manager->runResizer(),
+                'resizer' => $manager->runResizer(),
             ),
         );
     }
